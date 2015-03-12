@@ -103,7 +103,7 @@ define(function (require, exports, module) {
     * String template for window title when a file is open.
     * @type {string}
     */
-    var WINDOW_TITLE_STRING_DOC = "{0} ({1}) " + _osDash + " {2}";
+    var WINDOW_TITLE_STRING_DOC = "{0} ({1})" + _osDash + " {2}";
 
     /**
      * Container for _$titleWrapper; if changing title changes this element's height, must kick editor to resize
@@ -187,7 +187,7 @@ define(function (require, exports, module) {
             var projectName = projectRoot.name;
             // Construct shell/browser window title, e.g. "• index.html (myProject) — Brackets"
             if (currentlyViewedPath) {
-                windowTitle = StringUtils.format(WINDOW_TITLE_STRING_DOC, _currentTitlePath, projectName, brackets.config.app_title);
+                windowTitle = StringUtils.format(WINDOW_TITLE_STRING_DOC, projectName,  _currentTitlePath, brackets.config.app_title);
                 // Display dirty dot when there are unsaved changes
                 if (currentDoc && currentDoc.isDirty) {
                     windowTitle = "• " + windowTitle;
